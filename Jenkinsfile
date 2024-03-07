@@ -3,6 +3,11 @@ pipeline {
 
     stages(){
         stage('Hello') {
+            stage('github-clone') {
+                steps {
+                    git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/fftl/study_jenkins_branch.git'
+                }
+            }
             steps {
                 script {
                     // Docker ps 명령어 실행
