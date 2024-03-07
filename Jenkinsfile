@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stages(){
+    stages{
         stage('github-clone') {
             steps {
                 git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/fftl/study_jenkins_branch.git'
